@@ -1,0 +1,43 @@
+.btn{
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+
+    &--noFill{
+        border: 2px solid #C9DDFF;
+        box-sizing: border-box;
+        box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 100px;
+        width: 170px;
+        height: 42px;
+        color: #FFFFFF;
+        background: none;
+        font-size: 15px;
+    }
+
+    &--fill{
+        background: #E8EEF2;
+        box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 100px;
+        width: 170px;
+        height: 42px;
+        color: #1E2738;
+        font-size: 15px;
+    }
+
+    &--optionsBar{
+        width: 130px;
+    }
+
+    &--help{
+        background: #06212E;
+        border: 0.5px solid #FFFFFF;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        height: 30px;
+        width: 30px;
+        border-radius: 15px;
+        font-size: 16px;
+    }
+
+}

@@ -1,0 +1,602 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis|Archivo|EB+Garamond&display=swap");
+body {
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+.home {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home__title {
+  z-index: 2;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home__titleFirst {
+  font-family: 'EB Garamond', serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #E8EEF2;
+  letter-spacing: 0.08em;
+  font-size: 100px;
+  margin: 0px;
+  margin-top: 10px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.home__titleSecond {
+  font-family: 'Dosis', sans-serif;
+  font-style: normal;
+  color: #C9DDFF;
+  letter-spacing: 0.35em;
+  font-size: 60px;
+  margin: 0px;
+  margin-top: -20px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.home__img {
+  width: 100%;
+  height: 100%;
+}
+
+.home__buttons {
+  z-index: 3;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 60%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  bottom: 0px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.btn--noFill {
+  border: 2px solid #C9DDFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  width: 170px;
+  height: 42px;
+  color: #FFFFFF;
+  background: none;
+  font-size: 15px;
+}
+
+.btn--fill {
+  background: #E8EEF2;
+  -webkit-box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  width: 170px;
+  height: 42px;
+  color: #1E2738;
+  font-size: 15px;
+}
+
+.btn--optionsBar {
+  width: 130px;
+}
+
+.btn--help {
+  background: #06212E;
+  border: 0.5px solid #FFFFFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #FFFFFF;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+.step {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.step__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+}
+
+.step__contentImg {
+  width: 100%;
+  height: 100vh;
+}
+
+.step__bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25%;
+  height: 100%;
+  background-color: #011017;
+}
+
+.step__barHelp {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 10px;
+}
+
+.step__barLogo {
+  width: 50%;
+  height: auto;
+}
+
+.step__barPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.step__barPriceTitle {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+}
+
+.step__barPriceNumber {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+}
+
+.step__barSeparator {
+  width: 100%;
+  height: 30px;
+  background: #0E4863;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  border-bottom: #06212E 4px solid;
+}
+
+.step__barSeparatorTitle {
+  font-family: Dosis;
+  font-weight: 200;
+  font-size: 18px;
+  margin: 0px;
+}
+
+.step__barOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.step__barButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 310px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+}
+
+.navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  height: 90px;
+  z-index: 3;
+  position: absolute;
+  background: #011017;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 30px 30px;
+}
+
+.navBar__step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.navBar__stepState {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15px;
+  width: 80px;
+}
+
+.navBar__stepStateCircle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 8px solid #939393;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+
+.navBar__stepStateTitle {
+  color: #FFFFFF;
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15px;
+  margin: 5px 0px 0px 0px;
+}
+
+.navBar__stepStateCircle--done {
+  border: 8px solid #04A2EC;
+}
+
+.navBar__stepLine {
+  background-color: #939393;
+  width: 70px;
+  height: 8px;
+}
+
+.navBar__stepLine--done {
+  background-color: #04A2EC;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.optionOne {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.optionOne__first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.optionOne__firstLuminity {
+  font-family: Archivo;
+  font-style: normal;
+  color: #C9DDFF;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.optionOne__firstPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.optionOne__firstPriceTitle {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.optionOne__firstPriceNumber {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.optionOne__second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.optionOne__secondLamps {
+  font-family: Archivo;
+  font-style: normal;
+  color: #C9DDFF;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.optionOne__secondPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.optionOne__secondPriceTitle {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.optionOne__secondPriceNumber {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.optionSecond {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.optionSecond__first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.optionSecond__firstPainting {
+  font-family: Archivo;
+  font-style: normal;
+  color: #C9DDFF;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.optionSecond__firstPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.optionSecond__firstPriceTitle {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.optionSecond__firstPriceNumber {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.optionSecond__second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.optionSecond__secondMaterial {
+  font-family: Archivo;
+  font-style: normal;
+  color: #C9DDFF;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.optionSecond__secondPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.optionSecond__secondPriceTitle {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.optionSecond__secondPriceNumber {
+  color: #C9DDFF;
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 18px;
+}
+/*# sourceMappingURL=App.css.map */

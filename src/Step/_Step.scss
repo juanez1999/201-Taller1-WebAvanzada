@@ -1,0 +1,94 @@
+
+.step{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+
+        &Img{
+            width: 100%;
+            height: 100vh;
+        }
+    }
+
+    &__bar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+        background-color: #011017;
+
+        &Help{
+            align-self: flex-end;
+            margin: 10px;
+        }
+
+        &Logo{
+            width: 50%;
+            height: auto;
+        }
+
+        &Price{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+
+            &Title{
+                color: #C9DDFF;
+                font-family: Dosis;
+                font-style: normal;
+            }
+
+            &Number{
+                color: #C9DDFF;
+                font-family: Dosis;
+                font-style: normal;
+            }
+        }
+
+        &Separator{
+            width: 100%;
+            height: 30px;
+            background: #0E4863;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+            border-bottom: #06212E 4px solid;
+            
+            &Title{
+                font-family: Dosis;
+                font-weight: 200;
+                font-size: 18px;
+                margin: 0px;
+            }
+        }
+
+        &Options{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        &Buttons{
+            display: flex;
+            flex-direction: row;
+            width: 310px;
+            justify-content: space-around;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+}
