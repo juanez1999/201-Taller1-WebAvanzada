@@ -404,6 +404,11 @@ body {
   width: 100%;
 }
 
+.optionOne__firstRange {
+  width: 70% !important;
+  color: #0E4863 !important;
+}
+
 .optionOne__firstLuminity {
   font-family: Archivo;
   font-style: normal;
@@ -459,6 +464,7 @@ body {
   color: #C9DDFF;
   font-size: 22px;
   font-weight: 200;
+  margin-top: 0px;
 }
 
 .optionOne__secondPrice {
@@ -486,6 +492,26 @@ body {
   font-family: Dosis;
   font-style: normal;
   font-size: 18px;
+}
+
+.MuiFormControl-root {
+  width: 60%;
+}
+
+.MuiSelect-icon {
+  color: #C9DDFF !important;
+}
+
+.MuiFormLabel-root {
+  color: #C9DDFF !important;
+}
+
+.MuiSelect-select.MuiSelect-select {
+  color: #C9DDFF !important;
+}
+
+.MuiInput-underline:before {
+  border-bottom: 1px solid #C9DDFF !important;
 }
 
 .optionSecond {

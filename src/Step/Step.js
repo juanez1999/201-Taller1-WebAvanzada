@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import NavBar from '../NavBar/NavBar';
 import FirstOptions from '../FirstOptions/FirstOptions';
 import SecondOptions from '../SecondOptions/SecondOptions';
-import { HashRouter, Route, Link, Redirect } from 'react-router-dom';
+import { Route, Link, Redirect, useHistory } from 'react-router-dom';
 
 
 function Step(props){
-    const [active, setActive ] = React.useState(false);
+    const [active, setActive ] = React.useState(true);
+    const history = useHistory();
 
     if(!props.match.params.id) {
          // redirigir al usuario a la ruta /desing/ilumination cuando el match este vacio
@@ -17,6 +18,10 @@ function Step(props){
     if(!active && props.match.params.id === 'painting') {
         // redirigir al usuario a la ruta /main/one
         return <Redirect to="/design/ilumination" />;
+    }
+
+    const handleClick = () => {
+        history.push('/design/painting');
     }
 
     return <div className ="step">
@@ -44,7 +49,7 @@ function Step(props){
 
             <div className="step__barButtons">
                 <button className="btn btn--noFill btn--optionsBar">Ver Galeria</button>
-                <Link to="/design/painting"><button className="btn btn--fill btn--optionsBar">Continuar</button></Link>
+                <button onClick={handleClick} className="btn btn--fill btn--optionsBar">Continuar</button>
             </div>
 
         </div>
