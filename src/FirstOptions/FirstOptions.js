@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { Slider, InputLabel, Select, MenuItem, FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { DesignContext } from '../utils/DesignContext';
+import { lamps } from '../config/lamps';
 
 function FirstOptions(props){
     const context = React.useContext(DesignContext);
 
     console.log(context.id);
+    console.log(context.config.numberLamps);
 
     const useStyles = makeStyles((theme) => ({
         formControl: {
@@ -59,13 +61,11 @@ function FirstOptions(props){
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={context.numberLamps}
+                            value={context.config.numberLamps}
                             onChange={handleChange}
                             className="optionOne__secondSelect"
                         >
-                        <MenuItem value={1}>1 Lampara</MenuItem>
-                        <MenuItem value={2}>2 Lamparas</MenuItem>
-                        <MenuItem value={3}>3 Lamparas</MenuItem>
+                        {lamps.map(elem => <MenuItem value={elem.value}>{elem.text}</MenuItem>)}
                         </Select>
                 </FormControl>
 

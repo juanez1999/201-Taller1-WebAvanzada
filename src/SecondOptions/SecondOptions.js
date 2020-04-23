@@ -15,7 +15,9 @@ function SecondOptions(props){
         });
     }
 
-    if(context.config.intensity == 1){
+    console.log(context.config.numberLamps);
+
+    if(context.config.numberLamps == ' ' ){
         return <Redirect to = "/diseño/iluminacion" />
     }
 

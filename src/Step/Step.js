@@ -10,6 +10,7 @@ function Step(props){
     const [active, setActive ] = React.useState(true);
     const history = useHistory();
     let nextRoute = '';
+    let tagBtn = 'Continuar';
 
     if(!props.match.params.id) {
          // redirigir al usuario a la ruta /desing/ilumination cuando el match este vacio
@@ -23,6 +24,10 @@ function Step(props){
     }
     if(props.match.params.id === 'iluminacion') nextRoute = '/diseño/pintura';
     if(props.match.params.id === 'pintura') nextRoute = '/diseño/muebleria';
+    if(props.match.params.id === 'muebleria') {
+        tagBtn = 'Finalizar';
+        nextRoute = '/Galeria'
+    }
 
     const handleClick = () => {
         history.push(nextRoute);
@@ -53,7 +58,7 @@ function Step(props){
 
             <div className="step__barButtons">
                 <button className="btn btn--noFill btn--optionsBar">Ver Galeria</button>
-                <button onClick={handleClick} className="btn btn--fill btn--optionsBar">Continuar</button>
+                <button onClick={handleClick} className="btn btn--fill btn--optionsBar">{tagBtn}</button>
             </div>
 
         </div>

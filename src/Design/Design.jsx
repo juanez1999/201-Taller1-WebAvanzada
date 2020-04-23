@@ -7,11 +7,12 @@ export const Design = ({id, intensity, numberLamps, color }) =>{
     return (<div>
         <Typography>
             {id}
+            {color}
         </Typography>
     </div>);
 }
 
-Design.PropTypes = {
+Design.propTypes = {
     id: PropTypes.string,
     intensity: PropTypes.number,
     numberLamps: PropTypes.number,

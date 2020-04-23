@@ -119,7 +119,8 @@ body {
 }
 
 .btn--optionsBar {
-  width: 130px;
+  width: 120px;
+  margin-left: 10px;
 }
 
 .btn--help {
@@ -265,12 +266,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 310px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: absolute;
   bottom: 0;
-  margin-bottom: 15px;
 }
 
 .navBar {
