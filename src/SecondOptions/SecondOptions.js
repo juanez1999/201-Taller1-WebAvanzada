@@ -1,12 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { GithubPicker } from 'react-color';
+import { DesignContext } from '../utils/DesignContext';
+import { Redirect } from 'react-router-dom';
 
 
 function SecondOptions(props){
+    const context = React.useContext(DesignContext);
+
+    const handleColor = (color) => {
+        context.setConfig({
+            ...context.config,
+            color: color.hex,
+        });
+    }
+
+    if(context.config.intensity == 1){
+        return <Redirect to = "/diseño/iluminacion" />
+    }
+
     return <div className="optionSecond">
         <div className="optionSecond__first">
             <h2 className="optionSecond__firstPainting">Pintura pared</h2>
-            <input min="0" max="10" className="optionSecond__firstColor" type="color"></input>
+            {/* <input min="0" max="10" className="optionSecond__firstColor" type="color"></input> */}
+            <GithubPicker value={context.config.color} onChange={handleColor}/>
             <div className="optionSecond__firstPrice">
                 <h4 className="optionSecond__firstPriceTitle">Precio pintura</h4>
                 <h4 className="optionSecond__firstPriceNumber">$0</h4>

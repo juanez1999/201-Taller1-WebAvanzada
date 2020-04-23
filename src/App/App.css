@@ -625,4 +625,12 @@ body {
   font-style: normal;
   font-size: 18px;
 }
+
+.github-picker {
+  background: #0E4863 !important;
+}
+
+.github-picker div {
+  border-color: transparent transparent #0E4863 !important;
+}
 /*# sourceMappingURL=App.css.map */

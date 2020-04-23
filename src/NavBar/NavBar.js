@@ -7,7 +7,7 @@ function NavBar(props){
     return <div className ="navBar">
 
         <div className="navBar__step">
-            <Link className="link" to="/design/ilumination">
+            <Link className="link" to="/diseño/iluminacion">
                 <div className="navBar__stepState">
                     <div className="navBar__stepStateCircle navBar__stepStateCircle--done">1</div>
                     <p className="navBar__stepStateTitle">Iluminación</p>
@@ -18,7 +18,7 @@ function NavBar(props){
         
         
         <div className="navBar__step">
-            <Link className="link" to="/design/painting">
+            <Link className="link" to="/diseño/pintura">
                 <div className="navBar__stepState">
                         <div className="navBar__stepStateCircle">2</div>
                         <p className="navBar__stepStateTitle">Pintura</p>

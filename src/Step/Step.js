@@ -9,19 +9,23 @@ import { Route, Link, Redirect, useHistory } from 'react-router-dom';
 function Step(props){
     const [active, setActive ] = React.useState(true);
     const history = useHistory();
+    let nextRoute = '';
 
     if(!props.match.params.id) {
          // redirigir al usuario a la ruta /desing/ilumination cuando el match este vacio
-        return <Redirect to="/design/ilumination"/>;
+        nextRoute = '/diseño/iluminacion'
+        return <Redirect to="/diseño/iluminacion"/>;
     }
 
-    if(!active && props.match.params.id === 'painting') {
-        // redirigir al usuario a la ruta /main/one
-        return <Redirect to="/design/ilumination" />;
+    if(!active && props.match.params.id === 'pintura') {
+        // redirigir al usuario a la ruta /diseño/iluminacion
+        return <Redirect to="/diseño/iluminacion" />;
     }
+    if(props.match.params.id === 'iluminacion') nextRoute = '/diseño/pintura';
+    if(props.match.params.id === 'pintura') nextRoute = '/diseño/muebleria';
 
     const handleClick = () => {
-        history.push('/design/painting');
+        history.push(nextRoute);
     }
 
     return <div className ="step">
@@ -43,8 +47,8 @@ function Step(props){
             </div>
 
             <div className="step__barOptions"> 
-                <Route path="/design/ilumination" component={FirstOptions}/>
-                <Route path="/design/painting" component={SecondOptions}/>
+                <Route path="/diseño/iluminacion" component={FirstOptions}/>
+                <Route path="/diseño/pintura" component={SecondOptions}/>
             </div>
 
             <div className="step__barButtons">

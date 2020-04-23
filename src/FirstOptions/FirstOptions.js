@@ -22,17 +22,23 @@ function FirstOptions(props){
     const classes = useStyles();
 
     const handleChange = (event) => {
-        context.setNumberLamps(event.target.value);
+        context.setConfig({
+            ...context.config,
+            numberLamps: event.target.value,
+        });
     };
 
-    const handleChangeSlider = (event) => {
-        context.setIntensity(event.target.value);
+    const handleChangeSlider = (event, newValue) => {
+        context.setConfig({
+            ...context.config,
+            intensity: newValue,
+        });
     };
 
     return <div className="optionOne">
             <div className="optionOne__first">
                 <h2 className="optionOne__firstLuminity">Intensidad iluminación</h2>
-                <Slider className="optionOne__firstRange" onChange={handleChangeSlider}  defaultValue={1} aria-labelledby="discrete-slider" valueLabelDisplay="auto" marks min={1} max={5} />
+                <Slider className="optionOne__firstRange" onChange={handleChangeSlider}  value={context.config.intensity} defaultValue={1} aria-labelledby="discrete-slider" valueLabelDisplay="auto" marks min={1} max={5} />
                 {/* <input min="0" max="10" className="optionOne__firstRange" type="range"></input> */}
                 <div className="optionOne__firstPrice">
                     <h4 className="optionOne__firstPriceTitle">Precio iluminación</h4>

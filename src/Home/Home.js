@@ -7,7 +7,7 @@ function Home(props){
     const history = useHistory();
 
     const handleClick = () => {
-        history.push('/design/');
+        history.push('/diseño/');
     }
 
 
