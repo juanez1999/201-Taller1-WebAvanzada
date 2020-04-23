@@ -4,10 +4,12 @@ import NavBar from '../NavBar/NavBar';
 import FirstOptions from '../FirstOptions/FirstOptions';
 import SecondOptions from '../SecondOptions/SecondOptions';
 import { Route, Link, Redirect, useHistory } from 'react-router-dom';
+import { DesignContext } from '../utils/DesignContext';
 
 
 function Step(props){
     const [active, setActive ] = React.useState(true);
+    const context = React.useContext(DesignContext);
     const history = useHistory();
     let nextRoute = '';
     let tagBtn = 'Continuar';
@@ -44,7 +46,7 @@ function Step(props){
             <img className="step__barLogo" src="/resources/logo.png"/>
             <div className="step__barPrice">
                 <h1 className="step__barPriceTitle">Total</h1>
-                <h1 className="step__barPriceNumber">$1.000.000</h1>
+                <h1 className="step__barPriceNumber">${context.priceTotal} </h1>
             </div>
 
             <div className="step__barSeparator">

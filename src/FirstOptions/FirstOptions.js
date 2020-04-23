@@ -36,6 +36,10 @@ function FirstOptions(props){
             intensity: newValue,
         });
     };
+    
+
+    const priceLamps = lamps.find((e) => e.value == context.config.numberLamps)?.cost || 0;
+
 
     return <div className="optionOne">
             <div className="optionOne__first">
@@ -50,12 +54,6 @@ function FirstOptions(props){
 
             <div className="optionOne__second">
                 <h2 className="optionOne__secondLamps">Número de Lamparas</h2>
-                {/* <select className="optionOne__secondRange">
-                    <option value="O1">1 Lampara</option>
-                    <option value="O2">2 Lamparas</option>
-                    <option value="O3">3 Lamparas</option>
-                    <option value="O4">4 Lamparas</option>
-                </select> */}
                 <FormControl className={classes.formControl}>
                     <InputLabel className="optionOne__secondLabel" id="demo-simple-select-label">Número Lamparas</InputLabel>
                         <Select
@@ -71,7 +69,7 @@ function FirstOptions(props){
 
                 <div className="optionOne__secondPrice">
                     <h4 className="optionOne__secondPriceTitle">Precio Lamparas</h4>
-                    <h4 className="optionOne__secondPriceNumber">$0</h4>
+                    <h4 className="optionOne__secondPriceNumber">${priceLamps}</h4>
                 </div> 
             </div>
     </div>

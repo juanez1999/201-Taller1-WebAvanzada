@@ -6,13 +6,13 @@ import { Route, Link, BrowserRouter} from 'react-router-dom';
 import { DesignContext } from '../utils/DesignContext';
 import { v4 } from 'uuid';
 import { Design } from '../Design/Design'
+import { lamps } from '../config/lamps';
  
 
 
 function App() {
 
   const [id, setId] = React.useState(v4());
-  const [priceTotal, setPriceTotal] = React.useState();
 
   const [ config, setConfig ] = React.useState({
     intensity: 1,
@@ -21,11 +21,14 @@ function App() {
   });
 
   const [list, setList] = React.useState([]);
+
+  const priceLamps = lamps.find((e) => e.value == config.numberLamps)?.cost || 0;
+
+  const priceTotal = priceLamps;
   
   const value = {
     id: id,
     priceTotal: priceTotal,
-    setPriceTotal: setPriceTotal,
     // intensity: intensity,
     // numberLamps: numberLamps,
     // setIntensity: setIntensity,
