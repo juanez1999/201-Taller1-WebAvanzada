@@ -4,12 +4,14 @@ import { Slider, InputLabel, Select, MenuItem, FormControl } from '@material-ui/
 import { makeStyles } from '@material-ui/core/styles';
 import { DesignContext } from '../utils/DesignContext';
 import { lamps } from '../config/lamps';
+import { ilumination } from '../config/ilumination';
+
 
 function FirstOptions(props){
     const context = React.useContext(DesignContext);
 
-    console.log(context.id);
-    console.log(context.config.numberLamps);
+    // console.log(context.id);
+    // console.log(context.config.numberLamps);
 
     const useStyles = makeStyles((theme) => ({
         formControl: {
@@ -19,7 +21,7 @@ function FirstOptions(props){
         selectEmpty: {
           marginTop: theme.spacing(2),
         },
-      }));
+    }));
 
     const classes = useStyles();
 
@@ -39,16 +41,15 @@ function FirstOptions(props){
     
 
     const priceLamps = lamps.find((e) => e.value == context.config.numberLamps)?.cost || 0;
-
+    const priceIlumination = ilumination.find((e) => e.value == context.config.intensity)?.cost || 0;
 
     return <div className="optionOne">
             <div className="optionOne__first">
                 <h2 className="optionOne__firstLuminity">Intensidad iluminación</h2>
                 <Slider className="optionOne__firstRange" onChange={handleChangeSlider}  value={context.config.intensity} defaultValue={1} aria-labelledby="discrete-slider" valueLabelDisplay="auto" marks min={1} max={5} />
-                {/* <input min="0" max="10" className="optionOne__firstRange" type="range"></input> */}
                 <div className="optionOne__firstPrice">
                     <h4 className="optionOne__firstPriceTitle">Precio iluminación</h4>
-                    <h4 className="optionOne__firstPriceNumber">$0</h4>
+                    <h4 className="optionOne__firstPriceNumber">${priceIlumination.toLocaleString()}</h4>
                 </div> 
             </div>
 
@@ -69,7 +70,7 @@ function FirstOptions(props){
 
                 <div className="optionOne__secondPrice">
                     <h4 className="optionOne__secondPriceTitle">Precio Lamparas</h4>
-                    <h4 className="optionOne__secondPriceNumber">${priceLamps}</h4>
+                    <h4 className="optionOne__secondPriceNumber">${priceLamps.toLocaleString()}</h4>
                 </div> 
             </div>
     </div>

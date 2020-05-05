@@ -2,7 +2,8 @@ import * as React from 'react';
 
 export const DesignContext = React.createContext({
     id: '',
-    priceTotal: 0,
+    priceTotal: '',
+    setPriceTotal: () => null,
     setInsensity: () => null,
     setNumberLamps: () => null,
     config: {

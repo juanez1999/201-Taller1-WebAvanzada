@@ -15,11 +15,11 @@ function SecondOptions(props){
         });
     }
 
-    console.log(context.config.numberLamps);
+    // console.log('holiwis');
 
     if(context.config.numberLamps == ' ' ){
         return <Redirect to = "/diseño/iluminacion" />
-    }
+    } 
 
     return <div className="optionSecond">
         <div className="optionSecond__first">

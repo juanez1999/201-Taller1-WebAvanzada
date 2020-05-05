@@ -7,6 +7,8 @@ import { DesignContext } from '../utils/DesignContext';
 import { v4 } from 'uuid';
 import { Design } from '../Design/Design'
 import { lamps } from '../config/lamps';
+import { ilumination } from '../config/ilumination';
+import Gallery from '../Gallery/Gallery';
  
 
 
@@ -23,16 +25,12 @@ function App() {
   const [list, setList] = React.useState([]);
 
   const priceLamps = lamps.find((e) => e.value == config.numberLamps)?.cost || 0;
-
-  const priceTotal = priceLamps;
+  const priceIlumination = ilumination.find((e) => e.value == config.intensity)?.cost || 0;
+  const priceTotal = priceLamps + priceIlumination;
   
   const value = {
     id: id,
     priceTotal: priceTotal,
-    // intensity: intensity,
-    // numberLamps: numberLamps,
-    // setIntensity: setIntensity,
-    // setNumberLamps: setNumberLamps,
     config: config,
     setConfig: setConfig,
     list: list,
@@ -49,6 +47,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/diseño" component={Step} />
           <Route path="/diseño/:id?" component={Step} />
+          <Route path="/Galeria" component={Gallery} />
         </BrowserRouter>
       </DesignContext.Provider>
     </div>

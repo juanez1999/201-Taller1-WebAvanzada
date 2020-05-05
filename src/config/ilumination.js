@@ -1,17 +1,22 @@
-export const lamps = [
+export const ilumination = [
     {
         value: 1,
-        text: '1 Lámpara',
         cost: 70000,
     },
     {
         value: 2,
-        text: '2 Lámparas',
         cost: 130000,
     },
     {
         value: 3,
-        text: '3 Lámparas',
         cost: 200000,
     },
+    {
+        value: 4,
+        cost: 250000,
+    },
+    {
+        value: 5,
+        cost: 300000,
+    }
 ];
