@@ -38,21 +38,7 @@ function Step(props){
     }
 
     const handleFinish = () =>{
-        context.setList([
-            ...context.list,
-            {
-                id: context.id,
-                priceTotal: context.priceTotal,
-                intensity: context.config.intensity,
-                numberLamps: context.config.numberLamps,
-                color: context.config.color,
-            }
-        ]);
-        context.setConfig({
-            intensity: 1,
-            numberLamps: ' ',
-            color: '#ffffff',
-        });
+        context.handleFinish();
     }
     
     

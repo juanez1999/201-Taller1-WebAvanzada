@@ -27,6 +27,50 @@ function App() {
   const priceLamps = lamps.find((e) => e.value == config.numberLamps)?.cost || 0;
   const priceIlumination = ilumination.find((e) => e.value == config.intensity)?.cost || 0;
   const priceTotal = priceLamps + priceIlumination;
+
+  React.useEffect(()=>{
+    const listString = localStorage.getItem('list');
+    if(listString !== null){
+      setList(JSON.parse(listString));
+    }
+  }, []);
+
+  React.useEffect(()=>{
+    localStorage.setItem('list', JSON.stringify(list));
+  },[ list ]);
+
+  const handleDelete = () => {
+    setList([]);
+  }
+
+  const handleRoomDelete = (id) => {
+    const index = list.findIndex((elem)=>{
+      return elem.id === id;
+    });
+
+    setList([
+      ...list.slice(0, index),
+      ...list.slice(index+1),
+    ]);
+  }
+
+  const handleFinish = () =>{
+    setList([
+      ...list,
+      {
+          id: id,
+          priceTotal: priceTotal,
+          intensity: config.intensity,
+          numberLamps: config.numberLamps,
+          color: config.color,
+      }
+    ]);
+    setConfig({
+        intensity: 1,
+        numberLamps: ' ',
+        color: '#ffffff',
+    });
+  }
   
   const value = {
     id: id,
@@ -36,6 +80,9 @@ function App() {
     setConfig: setConfig,
     list: list,
     setList: setList,
+    handleFinish,
+    handleDelete,
+    handleRoomDelete,
   }
 
   return (

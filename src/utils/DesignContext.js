@@ -15,4 +15,7 @@ export const DesignContext = React.createContext({
     setConfig: () => null,
     list: [],
     setList: () => null,
+    handleFinish: () => null,
+    handleDelete: () => null,
+    handleRoomDelete: () => null,
 });

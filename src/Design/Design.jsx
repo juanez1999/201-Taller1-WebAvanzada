@@ -6,8 +6,6 @@ export const Design = ({id, intensity, numberLamps, color }) =>{
 
     return (<div>
         <Typography>
-            {id}
-            {color}
         </Typography>
     </div>);
 }
