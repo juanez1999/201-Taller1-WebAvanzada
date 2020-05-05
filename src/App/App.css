@@ -12,6 +12,16 @@ body {
   height: 100vh;
 }
 
+.Design {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .home {
   height: 100vh;
   display: -webkit-box;
@@ -136,8 +146,8 @@ body {
 }
 
 .step {
-  width: 100%;
-  height: 100%;
+  width: 30%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,7 +187,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25%;
+  width: 100%;
   height: 100%;
   background-color: #011017;
 }
@@ -270,6 +280,7 @@ body {
       justify-content: space-around;
   position: absolute;
   bottom: 0;
+  margin-bottom: 10px;
 }
 
 .navBar {
@@ -294,6 +305,7 @@ body {
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 30px 30px;
+  margin-left: 60px;
 }
 
 .navBar__step {
@@ -631,5 +643,12 @@ body {
 
 .github-picker div {
   border-color: transparent transparent #0E4863 !important;
+}
+
+.Room {
+  background-image: url("/resources/room.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 /*# sourceMappingURL=App.css.map */

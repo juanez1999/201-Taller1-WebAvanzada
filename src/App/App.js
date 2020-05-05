@@ -9,6 +9,9 @@ import { Design } from '../Design/Design'
 import { lamps } from '../config/lamps';
 import { ilumination } from '../config/ilumination';
 import Gallery from '../Gallery/Gallery';
+import { Room } from '../Room/Room';
+import NavBar from '../NavBar/NavBar';
+
  
 
 
@@ -93,8 +96,13 @@ function App() {
             return <Design color={config.color} id={id} intensity={config.intensity} numberLamps={config.numberLamps} /> 
           }}/>
           <Route path="/" exact component={Home} />
-          <Route path="/diseño" component={Step} />
-          <Route path="/diseño/:id?" component={Step} />
+          <Route path="/diseño/:id?" render={(props)=>{
+            return <div className="Design">
+              <NavBar route={props.match.params.id}></NavBar>
+              <Room id={id} priceTotal={priceTotal} intensity={config.intensity} numberLamps={config.numberLamps} color={config.color} /> 
+              <Step match={props.match} />
+            </div>
+          }} />
           <Route path="/Galeria" component={Gallery} />
         </BrowserRouter>
       </DesignContext.Provider>

@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DesignContext } from '../utils/DesignContext';
 import { Room } from '../Room/Room';
-import { v4 as uuidv4 } from 'uuid';
 import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 
 function Gallery(props){
     const context = React.useContext(DesignContext);
+    const history = useHistory();
 
     const handleDelete = () =>{
         context.handleDelete();
@@ -17,10 +18,12 @@ function Gallery(props){
         console.log(id);
         context.handleRoomDelete(id);
     }
+    
+    const handleStart = () => {
+        history.push('/diseño');
+    }
 
-    React.useEffect(()=>{
-        context.setId(uuidv4());
-    },[]);
+   
 
     return (
         <div className="GalleryMain">
@@ -38,9 +41,8 @@ function Gallery(props){
                 </div>
             )         
         })}
-        <Button variant="contained" color="secondary">Crear nuevo diseño</Button>
-        <Button onClick={handleDelete} variant="contained" color="secondary">Borrar toda la galeria</Button>
-
+        <Button variant="contained" onClick={handleStart} color="secondary">Crear nuevo diseño</Button>
+        {context.list.length > 0 && <Button onClick={handleDelete} variant="contained" color="secondary">Borrar toda la galeria</Button>}
         </div>
         )
 }

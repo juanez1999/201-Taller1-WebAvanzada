@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NavBar from '../NavBar/NavBar';
 import FirstOptions from '../FirstOptions/FirstOptions';
 import SecondOptions from '../SecondOptions/SecondOptions';
 import ThirdOptions from '../ThirdOptions/ThirdOptions';
 import { Route, Link, Redirect, useHistory } from 'react-router-dom';
 import { DesignContext } from '../utils/DesignContext';
 import Gallery from '../Gallery/Gallery';
+import { Room } from '../Room/Room';
 
 
 function Step(props){
@@ -53,11 +53,6 @@ function Step(props){
 
     
     return <div className ="step">
-        <div className="step__content">
-            <NavBar route={props.match.params.id}></NavBar>
-            <img className="step__contentImg" src="/resources/room.jpg"></img>
-        </div>
-
         <div className ="step__bar">
             <button className="btn btn--help step__barHelp">?</button>
             <img className="step__barLogo" src="/resources/logo.png"/>

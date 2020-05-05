@@ -10,6 +10,10 @@ body{
      height: 100vh;
 }
 
+.Design{
+     display: flex;
+     flex-direction: row;
+}
 
 
 @import '../Home/Home';
@@ -18,5 +22,8 @@ body{
 @import '../NavBar/NavBar';
 @import '../FirstOptions/FirstOptions';
 @import '../SecondOptions/SecondOptions';
+@import '../ThirdOptions/ThirdOptions';
+@import '../Room/Room';
+
 
 @import url('https://fonts.googleapis.com/css?family=Dosis|Archivo|EB+Garamond&display=swap');
