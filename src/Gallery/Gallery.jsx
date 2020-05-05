@@ -2,11 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DesignContext } from '../utils/DesignContext';
 import { Room } from '../Room/Room';
+import { v4 as uuidv4 } from 'uuid';
+
 
 function Gallery(props){
     const context = React.useContext(DesignContext);
 
-    
+    React.useEffect(()=>{
+        context.setId(uuidv4());
+    },[]);
+     
     return (
         <div className="GalleryMain">
         {context.list.map(room => {

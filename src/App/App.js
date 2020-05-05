@@ -14,7 +14,7 @@ import Gallery from '../Gallery/Gallery';
 
 function App() {
 
-  const [id, setId] = React.useState(v4());
+  const [id, setId] = React.useState(' ');
 
   const [ config, setConfig ] = React.useState({
     intensity: 1,
@@ -30,6 +30,7 @@ function App() {
   
   const value = {
     id: id,
+    setId: setId,
     priceTotal: priceTotal,
     config: config,
     setConfig: setConfig,
