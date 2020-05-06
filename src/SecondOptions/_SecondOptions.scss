@@ -29,6 +29,9 @@
                 font-family: Dosis;
                 font-style: normal;
                 font-size: 18px;
+                margin-top: 10px;
+                margin-bottom: 15px;
+
             }
 
             &Number{
@@ -36,6 +39,8 @@
                 font-family: Dosis;
                 font-style: normal;
                 font-size: 18px;
+                margin-top: 10px;
+                margin-bottom: 15px;
             }
         }
     }
@@ -52,6 +57,7 @@
             color: #C9DDFF;
             font-size: 22px;
             font-weight: 200;
+            margin-top: 0px;
         }
         
         &Price{
@@ -65,6 +71,7 @@
                 font-family: Dosis;
                 font-style: normal;
                 font-size: 18px;
+                margin-top: 10px;
             }
 
             &Number{
@@ -72,11 +79,39 @@
                 font-family: Dosis;
                 font-style: normal;
                 font-size: 18px;
+                margin-top: 10px;
+
+            }
+        }
+
+        &Texture{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            &Img{
+                width: 100%;
+                height: 80px;
+                display: flex;
+                justify-content: center;
+
+                &Btn{
+                    width: 70%;
+                    height: 80%;
+                    border-radius: 50%;
+                    border: none;
+
+                    & img{
+                        width: 90%;
+                    }
+                }
             }
         }
     }
 
 }
+
 
 .github-picker {
     background: #0E4863 !important;

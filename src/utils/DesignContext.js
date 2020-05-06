@@ -11,6 +11,7 @@ export const DesignContext = React.createContext({
         intensity: 1,
         numberLamps: ' ',
         color: '#ffffff',
+        texture: ' ',
     },
     setConfig: () => null,
     list: [],

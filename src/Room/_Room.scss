@@ -10,7 +10,25 @@
     &__lamps{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
+    }
+
+    &__fondoImg{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__floor{
+        width: 80%;
+        height: 100%;
+        z-index: 3;
+        position: absolute;
+        bottom: 0;
+
+        &Img{
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 

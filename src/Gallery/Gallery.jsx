@@ -35,6 +35,7 @@ function Gallery(props){
                     id={room.id} 
                     intensity={room.intensity} 
                     numberLamps={room.numberLamps} 
+                    texture = {room.texture}
                     priceTotal={room.priceTotal}>
                     </Room>
                     <Button onClick={()=> handleRoomDelete(room.id)} variant="contained" color="primary">Eliminar</Button>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { DesignContext } from '../utils/DesignContext';
 
-export const Room = ({ id, priceTotal, intensity, numberLamps, color }) => {
+export const Room = ({ id, priceTotal, intensity, numberLamps, color, texture }) => {
 
   const context = React.useContext(DesignContext);
   var cantLamps = [];
@@ -12,12 +12,13 @@ export const Room = ({ id, priceTotal, intensity, numberLamps, color }) => {
         context.setId(uuidv4());
     },[]);
 
+    console.log(texture)
+
     const style = {
         backgroundColor: color,
-        width: '70%',
+        width: '75%',
         height: '100vh'
     }
-    console.log(intensity);
 
     if(intensity == 1){
       cantLamps = [{
@@ -49,20 +50,23 @@ export const Room = ({ id, priceTotal, intensity, numberLamps, color }) => {
       }
       ]
     }
-
-
-
+    
     return (<div style={style} className="Room">
         {/* <p>{id}</p>
         <p>{priceTotal}</p>
         <p>{intensity}</p> */}
+        {/* <img className="Room__fondoImg" src={'/resources/room.jpg'}></img> */}
         <div className="Room__lamps">
-          {/* <div className="imgLamps"><img className="imgLamps__lamp" src={'/resources/lamp'+numberLamps+'.png'}></img></div> */}
           {cantLamps.map((cant)=>{
-            console.log(cantLamps.length);
             return <div className="imgLamps"><img className="imgLamps__lamp" src={'/resources/lamp'+numberLamps+'.png'}></img></div>
           })}
         </div>
+        {texture != ' ' &&
+          <div className="Room__floor">
+            <img className="Room__floorImg" src={'/resources/piso'+texture+'.png'}></img>
+          </div>
+        }
+        
       </div>);
   }
   

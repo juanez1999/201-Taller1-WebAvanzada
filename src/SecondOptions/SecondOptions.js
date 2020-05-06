@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { GithubPicker } from 'react-color';
 import { DesignContext } from '../utils/DesignContext';
 import { Redirect } from 'react-router-dom';
+import { floor } from '../config/floor';
 
 
 function SecondOptions(props){
     const context = React.useContext(DesignContext);
+    const textures = [1,2,3];
 
     const handleColor = (color) => {
         context.setConfig({
@@ -14,6 +16,14 @@ function SecondOptions(props){
             color: color.hex,
         });
     }
+
+    const handleTexture = (texture) =>{
+        context.setConfig({
+            ...context.config,
+            texture: texture,
+        })
+    }
+    const priceFloor = floor.find((e) => e.value == context.config.texture)?.cost || 0;
 
     // console.log('holiwis');
 
@@ -34,9 +44,18 @@ function SecondOptions(props){
 
         <div className="optionSecond__second">
                 <h2 className="optionSecond__secondMaterial">Material del piso</h2>
+                <div className="optionSecond__secondTexture">
+                    {textures.map(texture => {
+                        return <div className="optionSecond__secondTextureImg">
+                            <button onClick={()=>handleTexture(texture)} className="optionSecond__secondTextureImgBtn">
+                                <img src={'../resources/texture'+texture+'.jpg'} alt=""/>
+                            </button>
+                        </div>
+                    })}
+                </div>
                 <div className="optionSecond__secondPrice">
                     <h4 className="optionSecond__secondPriceTitle">Precio del material</h4>
-                    <h4 className="optionSecond__secondPriceNumber">$0</h4>
+                    <h4 className="optionSecond__secondPriceNumber">${priceFloor.toLocaleString()}</h4>
                 </div> 
         </div>
     </div>
