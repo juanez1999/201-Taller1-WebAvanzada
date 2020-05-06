@@ -1,17 +1,17 @@
 export const lamps = [
     {
         value: 1,
-        text: '1 Lámpara',
+        text: 'Luminaria rejilla',
         cost: 70000,
     },
     {
         value: 2,
-        text: '2 Lámparas',
+        text: 'Luminaria plana',
         cost: 130000,
     },
     {
         value: 3,
-        text: '3 Lámparas',
+        text: 'Luminaria circular',
         cost: 200000,
     },
 ];

@@ -44,19 +44,10 @@ function FirstOptions(props){
     const priceIlumination = ilumination.find((e) => e.value == context.config.intensity)?.cost || 0;
 
     return <div className="optionOne">
-            <div className="optionOne__first">
-                <h2 className="optionOne__firstLuminity">Intensidad iluminación</h2>
-                <Slider className="optionOne__firstRange" onChange={handleChangeSlider}  value={context.config.intensity} defaultValue={1} aria-labelledby="discrete-slider" valueLabelDisplay="auto" marks min={1} max={5} />
-                <div className="optionOne__firstPrice">
-                    <h4 className="optionOne__firstPriceTitle">Precio iluminación</h4>
-                    <h4 className="optionOne__firstPriceNumber">${priceIlumination.toLocaleString()}</h4>
-                </div> 
-            </div>
-
             <div className="optionOne__second">
-                <h2 className="optionOne__secondLamps">Número de Lamparas</h2>
+                <h2 className="optionOne__secondLamps">Tipo de lámpara</h2>
                 <FormControl className={classes.formControl}>
-                    <InputLabel className="optionOne__secondLabel" id="demo-simple-select-label">Número Lamparas</InputLabel>
+                    <InputLabel className="optionOne__secondLabel" id="demo-simple-select-label">Tipo de lámparas</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
@@ -69,8 +60,17 @@ function FirstOptions(props){
                 </FormControl>
 
                 <div className="optionOne__secondPrice">
-                    <h4 className="optionOne__secondPriceTitle">Precio Lamparas</h4>
+                    <h4 className="optionOne__secondPriceTitle">Precio lámparas</h4>
                     <h4 className="optionOne__secondPriceNumber">${priceLamps.toLocaleString()}</h4>
+                </div> 
+            </div>
+            
+            <div className="optionOne__first">
+                <h2 className="optionOne__firstLuminity">Intensidad iluminación</h2>
+                <Slider className="optionOne__firstRange" onChange={handleChangeSlider}  value={context.config.intensity} defaultValue={1} aria-labelledby="discrete-slider" valueLabelDisplay="auto" marks min={1} max={3} />
+                <div className="optionOne__firstPrice">
+                    <h4 className="optionOne__firstPriceTitle">Precio iluminación</h4>
+                    <h4 className="optionOne__firstPriceNumber">${priceIlumination.toLocaleString()}</h4>
                 </div> 
             </div>
     </div>
