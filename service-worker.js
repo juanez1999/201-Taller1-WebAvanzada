@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/201-Taller1-WebAvanzada/precache-manifest.6124c31d5218bd6c7064de9c9f21df8c.js"
+  "/201-Taller1-WebAvanzada/precache-manifest.a37f3d5ddf10d9ddc92db6d655b5e071.js"
 );
 
 self.addEventListener('message', (event) => {
