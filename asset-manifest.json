@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/201-Taller1-WebAvanzada/static/css/main.adb46604.chunk.css",
-    "main.js": "/201-Taller1-WebAvanzada/static/js/main.3b2a95a0.chunk.js",
-    "main.js.map": "/201-Taller1-WebAvanzada/static/js/main.3b2a95a0.chunk.js.map",
+    "main.js": "/201-Taller1-WebAvanzada/static/js/main.7637e587.chunk.js",
+    "main.js.map": "/201-Taller1-WebAvanzada/static/js/main.7637e587.chunk.js.map",
     "runtime-main.js": "/201-Taller1-WebAvanzada/static/js/runtime-main.32f1024d.js",
     "runtime-main.js.map": "/201-Taller1-WebAvanzada/static/js/runtime-main.32f1024d.js.map",
     "static/js/2.ee5b5f49.chunk.js": "/201-Taller1-WebAvanzada/static/js/2.ee5b5f49.chunk.js",
     "static/js/2.ee5b5f49.chunk.js.map": "/201-Taller1-WebAvanzada/static/js/2.ee5b5f49.chunk.js.map",
     "index.html": "/201-Taller1-WebAvanzada/index.html",
-    "precache-manifest.b78995fea83040cf1714f4bc33e3f9a1.js": "/201-Taller1-WebAvanzada/precache-manifest.b78995fea83040cf1714f4bc33e3f9a1.js",
+    "precache-manifest.bb390ff6ea0aee8a1da3d4ac3d84bf62.js": "/201-Taller1-WebAvanzada/precache-manifest.bb390ff6ea0aee8a1da3d4ac3d84bf62.js",
     "service-worker.js": "/201-Taller1-WebAvanzada/service-worker.js",
     "static/css/main.adb46604.chunk.css.map": "/201-Taller1-WebAvanzada/static/css/main.adb46604.chunk.css.map",
     "static/js/2.ee5b5f49.chunk.js.LICENSE.txt": "/201-Taller1-WebAvanzada/static/js/2.ee5b5f49.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.32f1024d.js",
     "static/js/2.ee5b5f49.chunk.js",
     "static/css/main.adb46604.chunk.css",
-    "static/js/main.3b2a95a0.chunk.js"
+    "static/js/main.7637e587.chunk.js"
   ]
 }
