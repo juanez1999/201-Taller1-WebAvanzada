@@ -1,9 +1,72 @@
 .GalleryMain{
     width: 100%;
     height: 100%;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #011017;
+
+    & h2{
+        color: #C9DDFF;
+        font-family: Archivo;
+        font-style: normal;
+        font-size: 25px;
+        margin-top: 20px;
+    }
+   
+    &__container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
     &__elem{
-        width: 50%;
-        height: 50%;
+        width: 45%;
+        height: 280px;
+        position: relative;
+        background-color: #132F46;
+        padding: 20px;
+        padding-bottom: 40px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+
+        &Btn{
+            margin-top: 20px;
+        }
+
+        &Footer{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 8px;
+            
+            & h2 {
+                font-size: 18px;
+                margin: 0px;
+                margin-left: 20px;
+            }
+
+            &Delete{
+                width: 5%;
+                height: 100%;
+                margin-top: 0px;
+                cursor: pointer;
+            }
+        }
+        
+    }
+
+    &__buttons{
+        display: flex;
+        width: 40%;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+
+        & button{
+            width: 180px;
+        }
     }
 }

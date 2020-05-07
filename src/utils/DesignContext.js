@@ -10,7 +10,7 @@ export const DesignContext = React.createContext({
     config: {
         intensity: 1,
         numberLamps: ' ',
-        color: '#ffffff',
+        color: 0,
         texture: ' ',
         furniture: ' ',
         picture: ' ',

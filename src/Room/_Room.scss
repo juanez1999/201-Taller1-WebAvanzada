@@ -1,28 +1,32 @@
+.Room__container{
+    width: 100%;
+    height: 100%;
+}
+
 .Room{
-    background-image: url("/resources/room.jpg");
+    background-image: url("/resources/pared0.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
     &__lamps{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         z-index: 5;
-    }
-
-    &__fondoImg{
-        width: 100%;
-        height: 100%;
+        margin-top: -10px;
     }
 
     &__furniture{
-        width: 30%;
+        width: 35%;
         position: absolute;
-        bottom: 65px;
+        bottom: 13%;
         z-index: 5;
 
         &Img{
@@ -39,7 +43,7 @@
     &__picture{
         width: 18%;
         position: absolute;
-        top: 140px;
+        top: 25%;
         z-index: 4;
 
         &Img{
@@ -55,7 +59,7 @@
 
 
     &__floor{
-        width: 80%;
+        width: 100%;
         height: 100%;
         z-index: 3;
         position: absolute;

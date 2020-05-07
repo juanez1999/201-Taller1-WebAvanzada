@@ -15,6 +15,7 @@ import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
 import { furniture } from '../config/furniture';
 import { picture } from '../config/picture';
+import { paint } from '../config/paint';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
   const [ config, setConfig ] = React.useState({
     intensity: 1,
     numberLamps: ' ',
-    color: '#ffffff',
+    color: 0,
     texture: ' ',
     furniture: ' ',
     picture: ' ',
@@ -36,8 +37,8 @@ function App() {
   const priceFloor = floor.find((e) => e.value == config.texture)?.cost || 0;
   const priceFurniture = furniture.find((e) => e.value == config.furniture)?.cost || 0;
   const pricePicture = picture.find((e) => e.value == config.picture)?.cost || 0;
-
-  const priceTotal = priceLamps + priceIlumination + priceFloor + priceFurniture + pricePicture;
+  const pricePaint = paint.find((e) => e.value == config.color)?.cost || 0;
+  const priceTotal = priceLamps + priceIlumination + priceFloor + priceFurniture + pricePicture + pricePaint;
 
   React.useEffect(()=>{
     const listString = localStorage.getItem('list');
@@ -82,7 +83,7 @@ function App() {
     setConfig({
         intensity: 1,
         numberLamps: ' ',
-        color: '#ffffff',
+        color: 0,
         texture: ' ',
         furniture: ' ',
         picture: ' ',

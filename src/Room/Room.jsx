@@ -12,12 +12,14 @@ export const Room = ({ id, priceTotal, intensity, numberLamps, color, texture, f
         context.setId(uuidv4());
     },[]);
 
-    console.log(picture)
+    console.log(color);
+    const Background = '/resources/pared'+{color}+'.jpg';
+    console.log(`url(${Background})`);
 
     const style = {
-        backgroundColor: color,
-        width: '75%',
-        height: '100vh'
+        backgroundImage: `url(${'../resources/pared'+color+'.jpg'})`,
+        width: '100%',
+        height: '100%',
     }
 
     if(intensity == 1){
@@ -51,31 +53,33 @@ export const Room = ({ id, priceTotal, intensity, numberLamps, color, texture, f
       ]
     }
     
-    return (<div style={style} className="Room">
+    return (<div className="Room__container">
         {/* <p>{id}</p>
         <p>{priceTotal}</p>
         <p>{intensity}</p> */}
         {/* <img className="Room__fondoImg" src={'/resources/room.jpg'}></img> */}
-        <div className="Room__lamps">
-          {cantLamps.map((cant)=>{
-            return <div className="imgLamps"><img className="imgLamps__lamp" src={'/resources/lamp'+numberLamps+'.png'}></img></div>
-          })}
+        <div style={style} className="Room">
+            <div className="Room__lamps">
+              {cantLamps.map((cant)=>{
+                return <div className="imgLamps"><img className="imgLamps__lamp" src={'/resources/lamp'+numberLamps+'.png'}></img></div>
+              })}
+            </div>
+            {furniture != ' ' &&
+              <div className="Room__furniture">
+                <img className="Room__furnitureImg" src={'/resources/mueble'+furniture+'.png'}></img>
+              </div>
+            }
+            {picture != ' ' &&
+              <div className="Room__picture">
+                <img className="Room__pictureImg" src={'/resources/cuadro'+picture+'.png'}></img>
+              </div>
+            }
+            {texture != ' ' &&
+              <div className="Room__floor">
+                <img className="Room__floorImg" src={'/resources/piso'+texture+'.png'}></img>
+              </div>
+            }
         </div>
-        {furniture != ' ' &&
-          <div className="Room__furniture">
-            <img className="Room__furnitureImg" src={'/resources/mueble'+furniture+'.png'}></img>
-          </div>
-        }
-        {picture != ' ' &&
-          <div className="Room__picture">
-            <img className="Room__pictureImg" src={'/resources/cuadro'+picture+'.png'}></img>
-          </div>
-        }
-        {texture != ' ' &&
-          <div className="Room__floor">
-            <img className="Room__floorImg" src={'/resources/piso'+texture+'.png'}></img>
-          </div>
-        }
         
       </div>);
   }
