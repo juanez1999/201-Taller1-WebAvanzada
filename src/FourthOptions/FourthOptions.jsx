@@ -21,7 +21,7 @@ function FourthOptions(props){
             {pictures.map(picture => {
             return <div className="FourthOptions__elemImg">
                     <button onClick={()=>handlePicture(picture)} className="FourthOptions__elemImgBtn">
-                        <img src={'../resources/cuadro'+picture+'.png'} alt=""/>
+                        <img src={'./resources/cuadro'+picture+'.png'} alt=""/>
                     </button>
                 </div>
             })}

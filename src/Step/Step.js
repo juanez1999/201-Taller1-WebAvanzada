@@ -6,7 +6,6 @@ import ThirdOptions from '../ThirdOptions/ThirdOptions';
 import { Route, Link, Redirect, useHistory } from 'react-router-dom';
 import { DesignContext } from '../utils/DesignContext';
 import Gallery from '../Gallery/Gallery';
-import { Room } from '../Room/Room';
 import FourthOptions from '../FourthOptions/FourthOptions';
 
 
@@ -52,7 +51,7 @@ function Step(props){
     return <div className ="step">
         <div className ="step__bar">
             <button className="btn btn--help step__barHelp">?</button>
-            <img className="step__barLogo" src="/resources/logo.png"/>
+            <img className="step__barLogo" src="./resources/logo.png"/>
             <div className="step__barPrice">
                 <h1 className="step__barPriceTitle">Total</h1>
                 <h1 className="step__barPriceNumber">${context.priceTotal.toLocaleString()} </h1>

@@ -20,7 +20,7 @@ function Home(props){
                 <h1 className="home__titleFirst">DESIGN</h1>
                 <h2 className="home__titleSecond">HOME</h2>
             </div>
-            <img className="home__img" src="/resources/home.png"/>
+            <img className="home__img" src="./resources/home.png"/>
             <div className="home__buttons">
                 <button onClick={handleGallery} className="btn btn--noFill btn--optionsBar">Ver Galeria</button>
                 <button onClick={handleClick} className="btn btn--fill">Comenzar</button>

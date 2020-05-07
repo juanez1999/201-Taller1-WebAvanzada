@@ -23,7 +23,7 @@ function ThirdOptions(props){
             return <div className="thirdOptions__elemImg">
                     {/* <Furniture fur={fur}></Furniture> */}
                     <button onClick={()=>handleFurniture(furniture)} className="thirdOptions__elemImgBtn">
-                        <img src={'../resources/mueble'+furniture+'.png'} alt=""/>
+                        <img src={'./resources/mueble'+furniture+'.png'} alt=""/>
                     </button>
                 </div>
             })}

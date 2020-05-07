@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from '../Home/Home';
 import Step from '../Step/Step';
-import { Route, Link, BrowserRouter} from 'react-router-dom';
+import { Route, Link, HashRouter as Router } from 'react-router-dom';
 import { DesignContext } from '../utils/DesignContext';
 import { Design } from '../Design/Design'
 import { lamps } from '../config/lamps';
@@ -107,7 +107,7 @@ function App() {
     <DndProvider backend={Backend}>
     <div className="App">
       <DesignContext.Provider value={value}>
-        <BrowserRouter>
+        <Router>
           <Route path="/diseño" render={()=>{
             return <Design color={config.color} id={id} intensity={config.intensity} numberLamps={config.numberLamps} /> 
           }}/>
@@ -127,7 +127,7 @@ function App() {
             </div>
           }} />
           <Route path="/Galeria" component={Gallery} />
-        </BrowserRouter>
+        </Router>
       </DesignContext.Provider>
     </div>
     </DndProvider>

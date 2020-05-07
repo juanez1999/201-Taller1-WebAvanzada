@@ -82,7 +82,7 @@ function SecondOptions(props){
                     {textures.map(texture => {
                         return <div className="optionSecond__secondTextureImg">
                             <button onClick={()=>handleTexture(texture)} className="optionSecond__secondTextureImgBtn">
-                                <img src={'../resources/texture'+texture+'.jpg'} alt=""/>
+                                <img src={'./resources/texture'+texture+'.jpg'} alt=""/>
                             </button>
                         </div>
                     })}
