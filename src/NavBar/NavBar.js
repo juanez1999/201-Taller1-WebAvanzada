@@ -30,17 +30,17 @@ function NavBar(props){
         <div className="navBar__step">
         <Link className="link" to="/diseño/muebleria">
             <div className="navBar__stepState">
-                <div className="navBar__stepStateCircle">3</div>
+                <div className={`navBar__stepStateCircle navBar__stepStateCircle${props.route != 'pintura' && props.route !='iluminacion' && props.route !='muebleria' && '--done'}`}>3</div>
                 <p className="navBar__stepStateTitle">Muebleria</p>
             </div>
         </Link>
-            <div className="navBar__stepLine"></div>
+            <div className={`navBar__stepLine navBar__stepLine${props.route != 'pintura' && props.route !='iluminacion' && props.route !='muebleria' && '--done'}`}></div>
         </div>
         <div className="navBar__step">
-        <Link className="link" to="/Galeria">
+        <Link className="link" to="/diseño/cuadros">
             <div className="navBar__stepState">
-                <div className="navBar__stepStateCircle">4</div>
-                <p className="navBar__stepStateTitle">Finalizar</p>
+                <div className={`navBar__stepStateCircle navBar__stepStateCircle${props.route != 'pintura' && props.route !='iluminacion' && props.route !='muebleria' && props.route !='cuadros' && '--done'}`}>4</div>
+                <p className="navBar__stepStateTitle">Cuadros</p>
             </div>
         </Link>
         </div>

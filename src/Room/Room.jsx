@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { DesignContext } from '../utils/DesignContext';
 
-export const Room = ({ id, priceTotal, intensity, numberLamps, color, texture }) => {
+export const Room = ({ id, priceTotal, intensity, numberLamps, color, texture, furniture, picture }) => {
 
   const context = React.useContext(DesignContext);
   var cantLamps = [];
@@ -12,7 +12,7 @@ export const Room = ({ id, priceTotal, intensity, numberLamps, color, texture })
         context.setId(uuidv4());
     },[]);
 
-    console.log(texture)
+    console.log(picture)
 
     const style = {
         backgroundColor: color,
@@ -61,6 +61,16 @@ export const Room = ({ id, priceTotal, intensity, numberLamps, color, texture })
             return <div className="imgLamps"><img className="imgLamps__lamp" src={'/resources/lamp'+numberLamps+'.png'}></img></div>
           })}
         </div>
+        {furniture != ' ' &&
+          <div className="Room__furniture">
+            <img className="Room__furnitureImg" src={'/resources/mueble'+furniture+'.png'}></img>
+          </div>
+        }
+        {picture != ' ' &&
+          <div className="Room__picture">
+            <img className="Room__pictureImg" src={'/resources/cuadro'+picture+'.png'}></img>
+          </div>
+        }
         {texture != ' ' &&
           <div className="Room__floor">
             <img className="Room__floorImg" src={'/resources/piso'+texture+'.png'}></img>

@@ -7,6 +7,7 @@ import { Route, Link, Redirect, useHistory } from 'react-router-dom';
 import { DesignContext } from '../utils/DesignContext';
 import Gallery from '../Gallery/Gallery';
 import { Room } from '../Room/Room';
+import FourthOptions from '../FourthOptions/FourthOptions';
 
 
 function Step(props){
@@ -21,18 +22,11 @@ function Step(props){
         nextRoute = '/diseño/iluminacion'
         return <Redirect to="/diseño/iluminacion"/>;
     }
-
-    // if(!active && props.match.params.id === 'pintura') {
-    //     // redirigir al usuario a la ruta /diseño/iluminacion
-    //     return <Redirect to="/diseño/iluminacion" />;
-    // }
-
-    
-    
-    
+     
     if(props.match.params.id === 'iluminacion') nextRoute = '/diseño/pintura';
     if(props.match.params.id === 'pintura') nextRoute = '/diseño/muebleria';
-    if(props.match.params.id === 'muebleria') {
+    if(props.match.params.id === 'muebleria') nextRoute = '/diseño/cuadros';
+    if(props.match.params.id === 'cuadros') {
         tagBtn = 'Finalizar';
         nextRoute = '/Galeria'
     }
@@ -40,10 +34,13 @@ function Step(props){
     const handleFinish = () =>{
         context.handleFinish();
     }
-    
+
+    const handleGallery = () =>{
+        history.push('/Galeria');
+    }
     
     const handleClick = () => {
-        if(props.match.params.id === 'muebleria') {
+        if(props.match.params.id === 'cuadros') {
            handleFinish();
            tagBtn = 'Finalizar';
            nextRoute = '/Galeria'
@@ -69,11 +66,12 @@ function Step(props){
                 <Route path="/diseño/iluminacion" component={FirstOptions}/>
                 <Route path="/diseño/pintura" component={SecondOptions}/>
                 <Route path="/diseño/muebleria" component={ThirdOptions}/>
+                <Route path="/diseño/cuadros" component={FourthOptions}/>
                 <Route path="/diseño/galeria" component={Gallery}/>
             </div>
 
             <div className="step__barButtons">
-                <button className="btn btn--noFill btn--optionsBar">Ver Galeria</button>
+                <button onClick={handleGallery} className="btn btn--noFill btn--optionsBar">Ver Galeria</button>
                 <button onClick={handleClick} className="btn btn--fill btn--optionsBar">{tagBtn}</button>
             </div>
 

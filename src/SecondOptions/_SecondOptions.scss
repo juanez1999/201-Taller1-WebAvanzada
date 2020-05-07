@@ -95,15 +95,21 @@
                 height: 80px;
                 display: flex;
                 justify-content: center;
+                align-items: center;
 
                 &Btn{
-                    width: 70%;
+                    width: 60%;
                     height: 80%;
                     border-radius: 50%;
+                    background-color: #C9DDFF;
                     border: none;
+                    padding: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
                     & img{
-                        width: 90%;
+                        width: 80%;
                     }
                 }
             }

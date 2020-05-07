@@ -4,7 +4,6 @@ import Home from '../Home/Home';
 import Step from '../Step/Step';
 import { Route, Link, BrowserRouter} from 'react-router-dom';
 import { DesignContext } from '../utils/DesignContext';
-import { v4 } from 'uuid';
 import { Design } from '../Design/Design'
 import { lamps } from '../config/lamps';
 import { ilumination } from '../config/ilumination';
@@ -12,6 +11,10 @@ import Gallery from '../Gallery/Gallery';
 import { Room } from '../Room/Room';
 import NavBar from '../NavBar/NavBar';
 import { floor } from '../config/floor';
+import { DndProvider } from 'react-dnd'
+import Backend from 'react-dnd-html5-backend'
+import { furniture } from '../config/furniture';
+import { picture } from '../config/picture';
 
 function App() {
 
@@ -22,6 +25,8 @@ function App() {
     numberLamps: ' ',
     color: '#ffffff',
     texture: ' ',
+    furniture: ' ',
+    picture: ' ',
   });
 
   const [list, setList] = React.useState([]);
@@ -29,7 +34,10 @@ function App() {
   const priceLamps = lamps.find((e) => e.value == config.numberLamps)?.cost || 0;
   const priceIlumination = ilumination.find((e) => e.value == config.intensity)?.cost || 0;
   const priceFloor = floor.find((e) => e.value == config.texture)?.cost || 0;
-  const priceTotal = priceLamps + priceIlumination + priceFloor;
+  const priceFurniture = furniture.find((e) => e.value == config.furniture)?.cost || 0;
+  const pricePicture = picture.find((e) => e.value == config.picture)?.cost || 0;
+
+  const priceTotal = priceLamps + priceIlumination + priceFloor + priceFurniture + pricePicture;
 
   React.useEffect(()=>{
     const listString = localStorage.getItem('list');
@@ -66,7 +74,9 @@ function App() {
           intensity: config.intensity,
           numberLamps: config.numberLamps,
           color: config.color,
-          texture: config.texture
+          texture: config.texture,
+          furniture: config.furniture,
+          picture: config.picture,
       }
     ]);
     setConfig({
@@ -74,6 +84,8 @@ function App() {
         numberLamps: ' ',
         color: '#ffffff',
         texture: ' ',
+        furniture: ' ',
+        picture: ' ',
     });
   }
   
@@ -91,6 +103,7 @@ function App() {
   }
 
   return (
+    <DndProvider backend={Backend}>
     <div className="App">
       <DesignContext.Provider value={value}>
         <BrowserRouter>
@@ -101,7 +114,14 @@ function App() {
           <Route path="/diseño/:id?" render={(props)=>{
             return <div className="Design">
               <NavBar route={props.match.params.id}></NavBar>
-              <Room id={id} priceTotal={priceTotal} intensity={config.intensity} numberLamps={config.numberLamps} color={config.color} texture={config.texture} /> 
+              <Room id={id} 
+              priceTotal={priceTotal} 
+              intensity={config.intensity} 
+              numberLamps={config.numberLamps} 
+              color={config.color} 
+              texture={config.texture} 
+              furniture={config.furniture}
+              picture={config.picture}/> 
               <Step match={props.match} />
             </div>
           }} />
@@ -109,7 +129,12 @@ function App() {
         </BrowserRouter>
       </DesignContext.Provider>
     </div>
+    </DndProvider>
   );
 }
-
 export default App;
+
+export const ItemTypes = {
+  FURNITURE: 'Furniture',
+}
+

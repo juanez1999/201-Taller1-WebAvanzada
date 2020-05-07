@@ -12,6 +12,8 @@ export const DesignContext = React.createContext({
         numberLamps: ' ',
         color: '#ffffff',
         texture: ' ',
+        furniture: ' ',
+        picture: ' ',
     },
     setConfig: () => null,
     list: [],
